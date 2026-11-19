@@ -4,7 +4,7 @@
  */
 
 INSERT INTO posts 
-VALUES(1, 'Введение в PostgreSQL', 'Текст 1';
+VALUES(1, 'Введение в PostgreSQL', 'Текст 1');
 
 INSERT INTO posts 
 VALUES(2, 'Введение в Python', 'Текст 2');
