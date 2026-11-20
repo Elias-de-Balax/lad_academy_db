@@ -6,22 +6,28 @@
 Подсказка: вспомните, что для связи M-N нужна отдельная таблица-«мост».
  */
 
-CREATE SCHEMA db_homework_1
-    CREATE TABLE tags (
-        id SERIAL PRIMARY KEY,
-        name VARCHAR(100) NOT NULL UNIQUE,
-        slug VARCHAR(1000) NOT NULL
-    )
+DROP TABLE IF EXISTS post_tags;
+DROP TABLE IF EXISTS posts;
+DROP TABLE IF EXISTS tags;
+
+--CREATE SCHEMA IF NOT EXISTS db_homework_1
+
+CREATE TABLE tags (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    slug VARCHAR(1000) NOT NULL
+);
+
+CREATE TABLE posts (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL UNIQUE,
+    content VARCHAR(1000) NOT NULL,
+    create_at TIMESTAMP NOT NULL DEFAULT now()
+);
     
-    CREATE TABLE posts (
-    	id SERIAL PRIMARY KEY,
-    	title VARCHAR(100) NOT NULL UNIQUE,
-    	content VARCHAR(1000) NOT NULL 
-    )
-    
-    CREATE TABLE post_tags (
-    	post_id INTEGER NOT NULL REFERENCES posts(id),
-    	tag_id INTEGER NOT NULL REFERENCES tags(id),
-    	
-    	CONSTRAINT pk_post_tags PRIMARY KEY (post_id, tag_id)
-    )
+CREATE TABLE post_tags (
+    post_id INTEGER NOT NULL REFERENCES posts(id),
+    tag_id INTEGER NOT NULL REFERENCES tags(id),
+
+    CONSTRAINT pk_post_tags PRIMARY KEY (post_id, tag_id)
+);

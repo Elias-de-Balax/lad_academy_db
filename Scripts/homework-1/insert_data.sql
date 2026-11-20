@@ -4,24 +4,22 @@
  */
 
 INSERT INTO posts 
-VALUES(1, 'Введение в PostgreSQL', 'Текст 1');
+VALUES
+    (1, 'Введение в PostgreSQL', 'Текст 1'),
+    (2, 'Введение в Python', 'Текст 2'),
+    (3, 'Введение в Django"', 'Текст 3');
 
-INSERT INTO posts 
-VALUES(2, 'Введение в Python', 'Текст 2');
+INSERT INTO tags
+VALUES
+    (1, 'Python', 'python'),
+    (2, 'PostgreSQL', 'postgresql'),
+    (3, 'Web', 'web'),
+    (4, 'Django', 'django');
 
-INSERT INTO posts 
-VALUES(3, 'Введение в Django"', 'Текст 3');
-
-INSERT INTO tags VALUES (1, 'Python', 'python');
-INSERT INTO tags VALUES (2, 'PostgreSQL', 'postgresql');
-INSERT INTO tags VALUES (3, 'Web', 'web');
-INSERT INTO tags VALUES (4, 'Django', 'django');
-
-INSERT INTO post_tags VALUES (1, 2);
-INSERT INTO post_tags VALUES (2, 1);
-INSERT INTO post_tags VALUES (2, 3);
-INSERT INTO post_tags VALUES (3, 3);
-INSERT INTO post_tags VALUES (3, 4);
-
-
-
+INSERT INTO post_tags
+VALUES
+    (1, 2),
+    (2, 1),
+    (2, 3),
+    (3, 3),
+    (3, 4);
