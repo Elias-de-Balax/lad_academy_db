@@ -1,1 +1,7 @@
+git/
+lad_academy_db
+lad_academy_db.pub
 *.log
+*.yml
+*.json
+/.DS_Store
