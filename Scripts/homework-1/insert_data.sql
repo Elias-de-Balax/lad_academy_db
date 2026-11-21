@@ -7,7 +7,7 @@ INSERT INTO posts
 VALUES
     (1, 'Введение в PostgreSQL', 'Текст 1'),
     (2, 'Введение в Python', 'Текст 2'),
-    (3, 'Введение в Django"', 'Текст 3');
+    (3, 'Введение в Django', 'Текст 3');
 
 INSERT INTO tags
 VALUES
